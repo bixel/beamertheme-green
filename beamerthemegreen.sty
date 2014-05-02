@@ -1,0 +1,52 @@
+% green beamer theme
+\ProvidesPackage{beamerthemegreen}[2014/05/02]
+
+% Colors
+\definecolor{greenHighlightColor}{rgb}{0.203921569,0.7411764710,0.039215686}
+\definecolor{greenLightColor}{rgb}{0.639215686,0.811764706,0.525490196}
+\definecolor{greenTextColor}{rgb}{0.0,0.0,0.0}
+\setbeamercolor{top box}{bg=greenHighlightColor}
+\setbeamercolor{frametitle}{fg=greenTextColor}
+
+% Fonts
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\newfontfamily\Light{Helvetica Light}
+\setbeamerfont{title}{family=\Light,size=\fontsize{30}{30}}
+\setbeamerfont{subtitle}{family=\Light,size=\fontsize{14}{14}}
+\setbeamerfont{frametitle}{family=\Light,size=\fontsize{14}{14}}
+
+% Titlepage
+\def\maketitle{\ifbeamer@inframe
+                   \titlepage
+               \else
+                   \frame[plain]{\titlepage}
+               \fi}
+
+\def\titlepage{\usebeamertemplate{title page}}
+\setbeamertemplate{title page}
+{
+    \begin{minipage}[t][\paperheight]{\textwidth}
+        \begin{beamercolorbox}[wd=\paperwidth,ht=4mm,dp=0em]{top box}
+        \end{beamercolorbox}
+        \centering
+        \vspace*{\fill}
+        \usebeamerfont{title}\inserttitle\par
+        \vspace*{2mm}
+        \usebeamerfont{subtitle}\insertsubtitle\par
+        \vspace*{\fill}
+        \usebeamerfont{subtitle}\insertauthor\par
+        \vspace*{5mm}
+    \end{minipage}
+}
+
+\setbeamertemplate{frametitle}
+{
+    \nointerlineskip % Put stuff right to the top
+    \begin{minipage}{\textwidth}
+        \begin{beamercolorbox}[wd=\paperwidth,ht=4mm,dp=0em]{top box}
+        \end{beamercolorbox}
+        \centering
+        \usebeamerfont{frametitle}\insertframetitle
+    \end{minipage}
+}
