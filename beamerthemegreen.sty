@@ -50,3 +50,19 @@
         \usebeamerfont{frametitle}\insertframetitle
     \end{minipage}
 }
+
+\usenavigationsymbolstemplate{}
+\setbeamertemplate{footline}
+{
+    \begin{minipage}[b]{\textwidth}
+        \begin{beamercolorbox}[leftskip=1cm]{frametitle}
+            \insertshortauthor
+        \end{beamercolorbox}
+  {\parskip0pt\par}%
+  {\nointerlineskip\vskip-0.5pt}%
+
+        \begin{beamercolorbox}[rightskip=1cm]{frametitle}
+            \insertframenumber
+        \end{beamercolorbox}
+    \end{minipage}
+}
